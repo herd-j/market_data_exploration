@@ -2,7 +2,7 @@ name: market_data_exploration
 channels:
   - conda-forge
 dependencies:
-  - python=3.18
+  - python=3.13
   - black
   - flake8
   - isort
