@@ -16,7 +16,8 @@ def get_Nday_return(
     df: pd.DataFrame,
     days: int, # Days over which to compute return
     log: bool = False, # Whether log return should be computed or not
-    shift: bool = False, # True is useful if creating a target variable for training ML 
+    shift: bool = False, # True is useful if creating a target variable for training ML
+    append_column: bool = True, # Whether we want to append to the dataframe or not
 ):
     
     if not isinstance(days, int):
@@ -29,19 +30,22 @@ def get_Nday_return(
 
 
     if not log:
-        RETURN = df["close"].pct_change(days)
+        RTN = df["close"].pct_change(days)
         colname = f'RTN_D{days}'
     else:
-        RETURN = np.log(df["close"]).diff(days)
+        RTN = np.log(df["close"]).diff(days)
         colname = f'LOGRTN_D{days}'
         
     if shift:
         colname = 'FUTURE_' + colname
-        df[colname] = RETURN.shift(-days)
-    else:
-        df[colname] = RETURN
+        RTN.shift(-days)
+        
+    RTN.rename(colname, inplace=True)
+    
+    if append_column:
+        df[colname] = RTN
 
-    return df
+    return RTN
 
 if __name__ == "__main__":
     app()
