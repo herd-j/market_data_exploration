@@ -21,6 +21,7 @@ dependencies:
   - scipy
   - pip:
     - yfinance
+    - pandas_ta
     - python-dotenv
     - mkdocs
     - -e .
