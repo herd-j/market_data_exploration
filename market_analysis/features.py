@@ -38,7 +38,7 @@ def get_Nday_return(
         
     if shift:
         colname = 'FUTURE_' + colname
-        RTN.shift(-days)
+        RTN = RTN.shift(-days)
         
     RTN.rename(colname, inplace=True)
     
