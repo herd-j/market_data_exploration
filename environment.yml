@@ -10,20 +10,22 @@ dependencies:
   - typer
   - loguru
   - tqdm
-  - ipython
-  - jupyterlab
-  - matplotlib
-  - notebook
-  - numpy
-  - statsmodels
-  - pandas
-  - scikit-learn
-  - xgboost
-  - plotly
-  - scipy
   - ta-lib
+  - ipython
   - pip:
+
+
+    - jupyterlab
+    - matplotlib
+    - notebook
+    - statsmodels
+    - pandas
+    - scikit-learn
+    - xgboost
+    - plotly
+    - scipy
     - yfinance
+    - tensorflow
     - qstrader 
     - backtrader
     - QuantLib
