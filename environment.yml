@@ -2,7 +2,7 @@ name: market_data_exploration
 channels:
   - conda-forge
 dependencies:
-  - python=3.13
+  - python=3.11
   - black
   - flake8
   - isort
@@ -10,17 +10,25 @@ dependencies:
   - typer
   - loguru
   - tqdm
+  - ta-lib
   - ipython
-  - jupyterlab
-  - matplotlib
-  - notebook
-  - numpy
-  - pandas
-  - scikit-learn
-  - xgboost
-  - scipy
   - pip:
-    - pandas_datareader
+
+
+    - jupyterlab
+    - matplotlib
+    - notebook
+    - statsmodels
+    - pandas
+    - scikit-learn
+    - xgboost
+    - plotly
+    - scipy
+    - yfinance
+    - tensorflow
+    - qstrader 
+    - backtrader
+    - QuantLib
     - python-dotenv
     - mkdocs
     - -e .
